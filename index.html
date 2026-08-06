@@ -107,6 +107,17 @@ section.alt{background:var(--card);border-top:1px solid var(--line);border-botto
 .gallery figure:hover img{transform:scale(1.05)}
 .gallery figcaption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(20,20,18,.78));color:#fff;padding:26px 14px 10px;font-size:13px;font-weight:500}
 
+/* download center — travel-agent style */
+.dl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.dl-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:6px;transition:.2s}
+.dl-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.dl-card .ftype{font-size:11px;font-weight:700;letter-spacing:1px;color:var(--accent);text-transform:uppercase}
+.dl-card h3{font-family:var(--serif);font-size:17px;font-weight:900}
+.dl-card p{color:var(--muted);font-size:13.5px;line-height:1.6;flex:1}
+.dl-card .size{font-size:12px;color:var(--muted)}
+.dl-card a.btn{margin-top:12px;text-align:center;padding:10px 18px;font-size:13.5px}
+.dl-note{margin-top:16px;font-size:12.5px;color:var(--muted)}
+
 /* itinerary */
 .timeline{border-left:2px solid var(--line);margin-left:8px;padding-left:30px;display:grid;gap:0}
 .tl{position:relative;padding:16px 0}
@@ -366,6 +377,46 @@ footer .brand{color:#fff;font-family:var(--serif);font-size:15px;font-weight:700
   <div class="btns">
     <a class="btn" href="info.html">查詢名額</a>
     <a class="btn ghost" href="#video">觀看賽事</a>
+  </div>
+</section>
+
+<section id="downloads">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">Download</div>
+      <h2>下載中心</h2>
+      <p>行程單張、宣傳圖卡同推廣文案，全部齊晒。歡迎下載轉發，帶埋朋友一齊跑。</p>
+    </div>
+    <div class="dl-grid">
+      <div class="dl-card">
+        <div class="ftype">PDF · 行程</div>
+        <h3>9日行程單張</h3>
+        <p>完整 9 日行程、兩場馬拉松資料、費用分項、報名時間線，一頁搞掂。</p>
+        <div class="size">PDF · 134 KB</div>
+        <a class="btn" href="downloads/itinerary.pdf" download>下載行程 PDF</a>
+      </div>
+      <div class="dl-card">
+        <div class="ftype">PDF · 文案</div>
+        <h3>宣傳文案單張</h3>
+        <p>主口號、支援口號、賣點同報名資料，方便直接做海報／貼文。</p>
+        <div class="size">PDF · 60 KB</div>
+        <a class="btn" href="downloads/promo-copy.pdf" download>下載文案 PDF</a>
+      </div>
+      <div class="dl-card">
+        <div class="ftype">PNG · 圖卡</div>
+        <h3>社交媒體圖卡 ×5</h3>
+        <p>公佈、賣點、請假、雙馬、拉友 5 張 1080×1350 圖卡，fb／IG 即出。</p>
+        <div class="size">PNG · 5 張</div>
+        <a class="btn" href="downloads/card-announce.png" download>下載圖卡</a>
+      </div>
+    </div>
+    <p class="dl-note">💡 圖卡共 5 張（公佈／賣點／請假／雙馬／拉友），其餘可喺下方一次過下載。</p>
+    <div class="dl-links" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:12px">
+      <a class="btn ghost" style="color:var(--ink);border-color:var(--line)" href="downloads/card-races.png" download>圖卡·雙馬</a>
+      <a class="btn ghost" style="color:var(--ink);border-color:var(--line)" href="downloads/card-leave.png" download>圖卡·請假</a>
+      <a class="btn ghost" style="color:var(--ink);border-color:var(--line)" href="downloads/card-value.png" download>圖卡·賣點</a>
+      <a class="btn ghost" style="color:var(--ink);border-color:var(--line)" href="downloads/card-friends.png" download>圖卡·拉友</a>
+    </div>
   </div>
 </section>
 
