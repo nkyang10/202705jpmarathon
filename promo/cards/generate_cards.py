@@ -259,7 +259,7 @@ def card_races():
     y2 = y + ch + 40
     draw.rounded_rectangle([x0, y2, x0+cw, y2+ch], radius=36, fill=WHITE, outline=SUN, width=5)
     draw.rounded_rectangle([x0, y2, x0+cw, y2+20], radius=10, fill=GRASS)
-    center_text(draw, y2+70, "岩手奥州きらめき全馬", 46, fill=GRASS, is_cjk=True, bold=True, cx=x0+cw//2)
+    center_text(draw, y2+70, "岩手奧州閃耀馬拉松", 46, fill=GRASS, is_cjk=True, bold=True, cx=x0+cw//2)
     draw_mixed(draw, (0, y2+138), [("5月16日", True), ("  (8:30 起步)", False)], 40, fill=INK, bold=True, center_x=x0+cw//2)
     sub2 = "全程馬拉松 · 42.195km"
     center_text(draw, y2+196, sub2, 30, fill=(140,140,140), is_cjk=True, bold=False, cx=x0+cw//2)
