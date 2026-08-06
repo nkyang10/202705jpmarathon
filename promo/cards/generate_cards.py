@@ -358,7 +358,7 @@ def card_value():
 
     cells = [
         # (icon, title, desc, accent)
-        ("icon-guarantee.png", "保證名額", "兩場都有位\n唔使擔心抽籤", CORAL),
+        ("icon-guarantee.png", "經驗幫手報名", "有經驗人仕\n陪你報名跟進", CORAL),
         ("icon-train.png", "東北JR Pass", "10日任搭\n玩盡東北", GRASS),
         ("icon-pb.png", "平坦全馬", "破PB 最佳路線", SKY),
         ("icon-gyutan.png", "美食溫泉", "牛舌 · 溫泉\n一路食住玩", SUN),
