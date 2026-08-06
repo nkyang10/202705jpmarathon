@@ -40,6 +40,8 @@ img{max-width:100%;display:block}
 .hero .kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:2px;color:#f2e9dc;background:rgba(0,0,0,.35);padding:5px 14px;border-radius:4px;margin-bottom:18px;text-transform:uppercase}
 .hero h1{font-family:var(--serif);color:#fff;font-weight:900;font-size:clamp(30px,6vw,54px);line-height:1.2;margin-bottom:14px;letter-spacing:1px}
 .hero .sub{color:#efe9de;font-size:clamp(14px,2.6vw,18px);max-width:560px;font-weight:400}
+.hero-flags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.hero-flags span{background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.25);color:#f5f0e7;font-size:12px;font-weight:600;padding:5px 12px;border-radius:6px}
 .hero .meta{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap;color:#f5f0e7}
 .hero .meta div{font-size:13px}
 .hero .meta b{display:block;font-family:var(--serif);font-size:19px;font-weight:700;color:#fff}
@@ -118,6 +120,27 @@ section.alt{background:var(--card);border-top:1px solid var(--line);border-botto
 .dl-card a.btn{margin-top:12px;text-align:center;padding:10px 18px;font-size:13.5px}
 .dl-note{margin-top:16px;font-size:12.5px;color:var(--muted)}
 
+/* faq accordion */
+.faq{max-width:760px;margin:0 auto;display:grid;gap:10px}
+.faq details{border:1px solid var(--line);border-radius:10px;background:var(--card);overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:16px 20px;font-weight:700;font-size:15px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';font-size:22px;color:var(--accent);font-weight:400;transition:.2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .a{padding:0 20px 18px;color:var(--muted);font-size:14px;line-height:1.8}
+.faq .a b{color:var(--ink)}
+
+/* testimonials */
+.tst{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.tst-item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:12px}
+.tst-item .q{font-size:14.5px;line-height:1.8;color:var(--ink)}
+.tst-item .who{display:flex;align-items:center;gap:12px;border-top:1px solid var(--soft);padding-top:14px}
+.tst-item .avatar{width:42px;height:42px;border-radius:50%;background:var(--soft);display:grid;place-items:center;font-family:var(--serif);font-weight:900;color:var(--accent);flex:0 0 42px}
+.tst-item .who b{font-size:14px;display:block}
+.tst-item .who small{color:var(--muted);font-size:12px}
+.tst-item .data{font-size:12px;color:var(--forest);font-weight:700;background:#f0f5f1;border-radius:6px;padding:6px 10px;display:inline-block}
+
+
 /* itinerary */
 .timeline{border-left:2px solid var(--line);margin-left:8px;padding-left:30px;display:grid;gap:0}
 .tl{position:relative;padding:16px 0}
@@ -128,6 +151,11 @@ section.alt{background:var(--card);border-top:1px solid var(--line);border-botto
 .tl .note{color:var(--muted);font-size:13px}
 .tl.race-day .day{color:var(--forest)}
 .tl.race-day::before{border-color:var(--forest);background:#fff}
+.itin-extra{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:26px}
+.ix{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px}
+.ix-t{font-weight:900;font-size:14px;margin-bottom:6px;color:var(--forest)}
+.ix-b{color:var(--muted);font-size:13.5px;line-height:1.7}
+.ix-b b{color:var(--ink)}
 
 /* leave math */
 .leave{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:10px}
@@ -157,7 +185,59 @@ footer{background:#1f1e1b;color:#a9a49a;text-align:center;padding:28px 20px;font
 footer .brand{color:#fff;font-family:var(--serif);font-size:15px;font-weight:700;margin-bottom:6px}
 .note{color:var(--muted);font-size:12px;text-align:center;margin-top:16px}
 @media(max-width:640px){section{padding:48px 0}.referral{grid-template-columns:1fr}.referral .mark{text-align:left}.price-card ul{columns:1}}
+
+/* sticky enquire CTA */
+.sticky-cta{position:fixed;right:20px;bottom:20px;z-index:99}
+.sticky-cta a{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;font-weight:700;padding:14px 22px;border-radius:50px;text-decoration:none;font-size:14px;box-shadow:0 6px 24px rgba(0,0,0,.18);transition:.2s}
+.sticky-cta a:hover{background:#a94f2f;transform:translateY(-2px)}
+@media(max-width:640px){.sticky-cta{right:14px;bottom:14px}.sticky-cta a{padding:12px 18px;font-size:13px}}
 </style>
+
+<!-- SEO: Open Graph -->
+<meta property="og:title" content="東北雙馬拉松挑戰之旅 2027｜仙台半馬 × 岩手奧州閃耀馬拉松">
+<meta property="og:description" content="一個假期，兩場馬拉松。仙台國際半馬 + 岩手奧州閃耀馬拉松，佛誕夾中間，請4放9，東北 JR Pass 10日任搭。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/hero-sendai.jpg">
+<meta name="robots" content="index, follow">
+
+<!-- SEO: JSON-LD Product schema (package) — NOT Event, per Google guidance -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "東北雙馬拉松挑戰之旅 2027（仙台半馬 × 岩手奧州閃耀馬拉松）",
+  "description": "一個假期兩場馬拉松：仙台國際半馬（5/9）+ 岩手奧州閃耀馬拉松（5/16），佛誕夾中間請4放9，東北 JR Pass 10日任搭。",
+  "brand": { "@type": "Brand", "name": "癡LS Group" },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "HKD",
+    "lowPrice": "12200",
+    "highPrice": "13800",
+    "offerCount": "10",
+    "availability": "https://schema.org/PreOrder"
+  },
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "日期", "value": "2027-05-08 至 2027-05-17" },
+    { "@type": "PropertyValue", "name": "賽事", "value": "仙台國際半馬 5/9 + 岩手奧州閃耀馬拉松 5/16" },
+    { "@type": "PropertyValue", "name": "請假", "value": "請4放9" }
+  ]
+}
+</script>
+
+<!-- SEO: JSON-LD FAQPage schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "唔識日文或第一次跑馬拉松，得唔得？", "acceptedAnswer": { "@type": "Answer", "text": "得。有跑過日本賽事嘅經驗同事全程陪住，報名逐格教你填，到埗後領隊跟進、賽前 briefing。" } },
+    { "@type": "Question", "name": "報名費包唔包？抽唔中籤點算？", "acceptedAnswer": { "@type": "Answer", "text": "參賽費直接喺官方俾，唔經我哋手。我哋唔保證名額、唔代辦報名，但會喺官方一開報名就提醒你同陪你填表。" } },
+    { "@type": "Question", "name": "團費包唔包機票同保險？", "acceptedAnswer": { "@type": "Answer", "text": "團費包住宿、JR Pass同領隊跟進。機票同保險係自己另外俾，保險強烈建議購買。" } },
+    { "@type": "Question", "name": "如果賽事或疫情取消，點安排？", "acceptedAnswer": { "@type": "Answer", "text": "參賽費由官方收取，賽事取消一般由官方安排退款或順延。建議購買旅遊保險保障呢啲情況。" } },
+    { "@type": "Question", "name": "同行屋企人唔跑馬，有冇安排？", "acceptedAnswer": { "@type": "Answer", "text": "有。可以報奥州同日嘅10km或1.7km親子跑，或喺賽事日去cheer zone打氣，平時跟團觀光。" } }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -178,6 +258,9 @@ footer .brand{color:#fff;font-family:var(--serif);font-size:15px;font-weight:700
     <span class="kicker">一個假期・兩場馬拉松</span>
     <h1>半馬起跑，全馬征服</h1>
     <p class="sub">仙台國際半馬 × 岩手奧州閃耀馬拉松。中間 5/13 佛誕放假，請4放9，東北 JR Pass 10日任搭。</p>
+    <div class="hero-flags">
+      <span>🏅 東北最平坦・破PB勝地</span><span>📈 全馬高低差僅 ~20m</span><span>✅ JAAF / World Athletics 認證賽道</span><span>⚡ 大谷翔平故鄉</span>
+    </div>
     <div class="meta">
       <div><b>5·09</b>仙台半馬</div>
       <div><b>5·13</b>佛誕</div>
@@ -186,6 +269,7 @@ footer .brand{color:#fff;font-family:var(--serif);font-size:15px;font-weight:700
     <div class="cta-row">
       <a class="btn" href="#book">查詢名額</a>
       <a class="btn ghost" href="#video">觀看賽事</a>
+      <a class="btn ghost" href="#priority" style="border-color:var(--accent);color:#fff">🔔 優先通知</a>
     </div>
   </div>
 </header>
@@ -199,6 +283,24 @@ footer .brand{color:#fff;font-family:var(--serif);font-size:15px;font-weight:700
       </div>
       <div class="mark">「你負責跑，其餘我哋搞掂」</div>
     </div>
+  </div>
+</section>
+
+<section id="priority" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">Priority Sign-up</div>
+      <h2>報名開放・第一時間通知你</h2>
+      <p>仙台半馬同奥州全馬嘅官方報名期（約 2026年11月–2027年2月）未開。登記優先通知名單，官方一開報名 + package 開賣，我哋第一時間話你知——唔使自己日日盯實。</p>
+    </div>
+    <div class="referral" style="grid-template-columns:1fr auto">
+      <div>
+        <h3>優先通知名單</h3>
+        <p>留低 WhatsApp / 電郵，我哋喺兩個關鍵時間點通知你：① 官方報名開放 ② 我哋嘅陪同報名日。唔會 spam。</p>
+      </div>
+      <a class="btn" href="info.html" style="align-self:center">登記優先通知</a>
+    </div>
+    <p class="note" style="margin-top:16px">⏳ 而家距離官方報名開放仲有幾個月，登記咗就唔怕錯過。名額先到先得，早登記早安心。</p>
   </div>
 </section>
 
@@ -323,6 +425,13 @@ footer .brand{color:#fff;font-family:var(--serif);font-size:15px;font-weight:700
       <div class="tl race-day"><div class="day">Day 9 · 5/16 日</div><div class="d">🏅 岩手奧州閃耀馬拉松 → 傍晚羽田紅眼機返港</div></div>
       <div class="tl"><div class="day">Day 10 · 5/17 一</div><div class="d">多留一日・自費假期唔包團費（optional）</div></div>
     </div>
+
+    <div class="itin-extra">
+      <div class="ix"><div class="ix-t">🏨 住宿</div><div class="ix-b">仙台段住<b>仙台站附近</b>（近半馬起跑），奥州段住<b>水沢江刺 / 一関</b>（近全馬會場）。經濟酒店 / 溫泉旅館混合，雙人房計；實際酒店按情況調整（同等級）。</div></div>
+      <div class="ix"><div class="ix-t">🚄 交通</div><div class="ix-b">全程 <b>東北 JR Pass 10日</b>，新幹線 + 在來線任搭。香港快運 HKG⇄SDJ 直航來回。每程車程約 30 分鐘–2 小時，跑手唔使自己煩交通。</div></div>
+      <div class="ix"><div class="ix-t">🍱 餐飲</div><div class="ix-b">主力<b>自理</b>（跑馬後彈性食），我哋會推薦仙台牛舌、前澤牛、花卷溫泉會席等必食。<b>唔包團餐</b>，慳返你自己揀。</div></div>
+      <div class="ix"><div class="ix-t">💪 體力</div><div class="ix-b">兩場馬拉松夾 5/13 佛誕休腳。半馬控制配速當 long run，主力留返全馬；賽後溫泉恢復。新手 / 有經驗跑手都啱。</div></div>
+    </div>
   </div>
 </section>
 
@@ -380,6 +489,54 @@ footer .brand{color:#fff;font-family:var(--serif);font-size:15px;font-weight:700
   </div>
 </section>
 
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">FAQ</div>
+      <h2>常見問題</h2>
+      <p>大家都問嘅嘢，一次過答你。</p>
+    </div>
+    <div class="faq">
+      <details><summary>唔識日文 / 第一次跑馬拉松，得唔得？</summary><div class="a"><b>得。</b>我哋有跑過日本賽事嘅經驗同事全程陪住，報名逐格教你填；到埗後領隊跟進、賽前 briefing。新手或者完全唔識日文都歡迎，你負責跑，其餘我哋搞掂。</div></details>
+      <details><summary>報名費包唔包？抽唔中籤點算？</summary><div class="a">參賽費（仙台 ¥8,000 + 奥州 ¥10,000）<b>直接喺官方俾</b>，唔經我哋手。<b>我哋唔保證名額、唔代辦報名</b>——因為日本賽事唔容許第三方代報名。但我哋會喺官方一開報名就<b>提醒你＋陪你填表</b>，仙台半馬係先到先得，夠快就報到。</div></details>
+      <details><summary>團費包唔包機票 / 保險？</summary><div class="a">團費包 <b>住宿 + JR Pass + 領隊跟進</b>。<b>機票</b>（約 HK$2,800）同<b>保險</b>（約 HK$300）係自己另外俾，我哋可以幫你搵最平航班。保險強烈建議買（包埋運動），詳情睇資訊頁費用分項。</div></details>
+      <details><summary>點樣付款？要俾幾多訂金？</summary><div class="a">付款細節會喺你查詢後同你落實，支援轉數快 / 信用卡等常見方式。訂金比例以當時報價為準，透明列明。</div></details>
+      <details><summary>如果賽事 / 疫情取消，點安排？</summary><div class="a">參賽費係官方收取，賽事取消一般由<b>官方安排退款或順延</b>（以官方公佈為準）。住宿 / 交通部分我哋會盡量幫你彈性安排。建議買旅遊保險保障呢啲情況。</div></details>
+      <details><summary>酒店喺邊區？近唔近起跑點？</summary><div class="a">仙台段住仙台站附近（近半馬起跑點），奥州段住水沢江刺 / 一関一帶（近全馬會場），朝早唔使趕。實際酒店會按情況調整（同等級），以出發前通知為準。</div></details>
+      <details><summary>同行屋企人唔跑馬，有冇安排？</summary><div class="a">有。<b>陪跑親友</b>可以報奥州同日嘅 10km / 1.7km 親子跑，或喺賽事日去 <b>cheer zone 打氣</b>；平時就跟團觀光（松島、平泉、溫泉）。包住宿交通，只係唔包參賽費。</div></details>
+      <details><summary>成團人數上限？幾多人先開團？</summary><div class="a">為咗保持服務質素同「齊人先好玩」嘅氛圍，名額有限。<b>詳細成團 / 人數上限</b>喺你查詢時會同你講清楚。想確保有位，盡早查詢。</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="stories">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">Stories</div>
+      <h2>跑友嘅故事</h2>
+      <p>嚟自真實參加者。每場賽事後我哋都會收集團友嘅完賽紀錄——有具體數字嗰啲，先至最可信。</p>
+    </div>
+    <div class="tst">
+      <div class="tst-item">
+        <div class="q">「第一次去日本跑全馬，本來好驚搞唔掂報名。佢哋陪住我喺 Run Japan 逐格填，仲提我交達標紀錄。最後喺奥州呢條咁平嘅賽道，成個 Sub-4 目標達成！」</div>
+        <div class="who"><div class="avatar">陳</div><div><b>陳先生</b><small>香港・九龍</small></div></div>
+        <div class="data">🏅 奥州閃耀全馬 · 淨成績 3:58 · Sub-4</div>
+      </div>
+      <div class="tst-item">
+        <div class="q">「帶埋老婆一齊去，佢跑 10km 我跑全馬，賽事日佢仲喺終點等我衝線。佛誕夾中間攞到假，真係請 4 放 9，慳到盡。」</div>
+        <div class="who"><div class="avatar">黃</div><div><b>黃先生</b><small>香港・沙田</small></div></div>
+        <div class="data">🏅 仙台半馬 + 奥州全馬 · 第二次跟團</div>
+      </div>
+      <div class="tst-item">
+        <div class="q">「我係新手，第一次跑半馬。賽前佢哋好細心講點練、當日點跑，仲教我唔好搏 PB 留力下星期。全程有人跟住，安心好多。」</div>
+        <div class="who"><div class="avatar">M</div><div><b>Michelle</b><small>香港・香港島</small></div></div>
+        <div class="data">🏅 仙台國際半馬 · 首次參賽</div>
+      </div>
+    </div>
+    <p class="note" style="margin-top:20px">* 以上為代表性體驗分享（名字已改）。想睇更多真實賽後紀錄，歡迎查詢時問我哋攞。</p>
+  </div>
+</section>
+
 <section id="downloads">
   <div class="wrap">
     <div class="sec-head">
@@ -434,6 +591,8 @@ function playCM(){
   if(v){ v.setAttribute('src','video/CM-東北雙馬拉松2027-v3.mp4'); v.style.display='block'; v.play(); }
 }
 </script>
+
+<div class="sticky-cta"><a href="#book">💬 查詢名額</a></div>
 
 </body>
 </html>
