@@ -9,11 +9,14 @@ GitHub Pages：**https://nkyang10.github.io/202705jpmarathon/**
 ## 📂 內容
 | 檔案 | 用途 |
 |------|------|
-| `index.html` | 旅行團角度宣傳網頁（GitHub Pages） |
+| `index.html` | 旅行團角度宣傳網頁（GitHub Pages，休閑專業編輯風） |
+| `info.html` | 資訊頁：報名攻略 + 時間軸 + 短距離選擇 + 溫度濕度 + 費用分項 |
 | `docs/itinerary.md` | 詳細行程 + 馬拉松注意事項 |
+| `docs/itinerary-middle.md` | 中間行程兩大玩法：文青（文化×睇景）/ 運動（GIANT單車） |
 | `promo/slogans-and-copy.md` | 口號 + 社交媒體宣傳文案 |
+| `promo/cards/` | fb/IG 宣傳圖卡 |
 | `research/promo-strategy-reference.md` | 其他馬拉松團宣傳策略/口號參考 |
-| `assets/` | AI 生成宣傳圖片（ComfyUI） |
+| `assets/` | ComfyUI 生成宣傳圖片 + 剪貼圖 icon |
 
 ## 🏁 核心賣點
 - 一程玩兩場馬拉松：半馬起跑、全馬征服

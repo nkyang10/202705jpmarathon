@@ -164,14 +164,34 @@ def draw_brand_header(base, draw, cx_it):
 
 # ---------- Card 1: Announcement hero ----------
 def card_announce():
-    # coral->sun gradient full card
+    # Base: hero-sendai photo as background
     img = Image.new("RGB", (W, H), CREAM)
+    hero = Image.open(AZ+"hero-sendai.jpg").convert("RGB")
+    # crop to portrait aspect
+    tw, th = hero.size
+    target = tw / W * H
+    if target <= th:
+        top = int((th - target)//2); hero = hero.crop((0, top, tw, top+target))
+    else:
+        # too tall; crop width
+        left = int((tw - target)//2); hero = hero.crop((left, 0, left+target, th))
+    hero = hero.resize((W, H), Image.LANCZOS)
+    # Blend hero with coral->sun gradient for bright vibrant look
     grad = v_gradient(W, H, CORAL, SUN, (255, 170, 95))
-    img.paste(grad, (0, 0))
+    # Use vivid blend: mostly gradient structure but keep photo visible
+    blended = Image.blend(hero, grad, 0.60)
+    img.paste(blended, (0, 0))
     draw = ImageDraw.Draw(img)
 
-    # Brand header
-    draw_brand_header(img, draw, W//2)
+    # Slight dark scrim behind top text zone for legibility
+    scrim = Image.new("RGBA", (W, 260), (35, 48, 58, 90))
+    img.paste(scrim, (0, 0), scrim)
+
+    # Brand header (white circle variant here)
+    circle = brand_circle(64, 108, fill=SUN, text_color=INK)
+    paste_center(img, circle, (W//2, 70))
+    draw_mixed(draw, (0, 104), [("癡", True), ("LS ", False), ("Group", False)], 40, fill=WHITE, bold=True, center_x=W//2+150)
+    draw_mixed(draw, (0, 142), [("一個假期，兩場馬拉松", True)], 26, fill=SUN, bold=False, center_x=W//2+150)
 
     # Runner icon large in white circle
     run_layer = rounded_icon_circle("icon-runner.png", 330, bg=WHITE, ring=SUN, ring_w=14)
@@ -179,35 +199,28 @@ def card_announce():
 
     # dotted divider
     for i in range(12):
-        draw.ellipse([W//2 - 120 + i*22, 655, W//2 - 118 + i*22, 667], fill=tuple(int(c*0.85) for c in SUN))
+        draw.ellipse([W//2 - 120 + i*22, 655, W//2 - 118 + i*22, 667], fill=SUN)
 
     # Big headline
-    headline = "一個假期，兩場馬拉松"
-    y_head = 720
-    center_text(draw, y_head, "一個假期，", 96, fill=WHITE, is_cjk=True, bold=True)
-    center_text(draw, y_head+112, "兩場馬拉松", 96, fill=WHITE, is_cjk=True, bold=True)
+    center_text(draw, 730, "一個假期，", 96, fill=WHITE, is_cjk=True, bold=True)
+    center_text(draw, 845, "兩場馬拉松", 96, fill=SUN, is_cjk=True, bold=True)
 
     # subtitle tag
     sub = "仙台半馬 × 岩手奥州全馬"
-    sub_w = text_w(draw, sub, 46, is_cjk=True, bold=True)
-    bx = (W - sub_w)//2 - 40
-    draw.rounded_rectangle([bx, 965, bx+sub_w*0 + sub_w + 80, 965+74], radius=37, fill=INK)
-    center_text(draw, 1002, sub, 46, fill=SUN, is_cjk=True, bold=True)
+    sub_w = text_w(draw, sub, 44, is_cjk=True, bold=True)
+    draw.rounded_rectangle([(W-sub_w)//2-40, 950, (W+sub_w)//2+40, 1024], radius=37, fill=INK)
+    center_text(draw, 987, sub, 44, fill=SUN, is_cjk=True, bold=True)
 
     # bottom date line
     dt = "仙台 5/9 · 奥州 5/16 · 佛誕 5/13"
     center_text(draw, 1085, dt, 40, fill=WHITE, is_cjk=False, bold=True)
 
     # footer brand line
-    draw_mixed(draw, (0, 1230+30), [("癡LS Group · 東北雙馬拉松 2027", True)], 30, fill=WHITE, bold=False, center_x=W//2)
+    draw_mixed(draw, (0, 1260), [("癡LS Group · 東北雙馬拉松 2027", True)], 30, fill=WHITE, bold=False, center_x=W//2)
 
     img.save(OUT+"card-announce.png")
 
 # ---------- Card 2: Two races ----------
-def race_badge(name, date, time, icon, accent):
-    """Draws a race block, returns (top,bottom)."""
-    pass
-
 def card_races():
     img = Image.new("RGB", (W, H), CREAM)
     # sky->grass gradient
@@ -320,15 +333,6 @@ def card_leave():
     img.save(OUT+"card-leave.png")
 
 # ---------- Card 4: value 4 quadrant ----------
-def value_quad(x, y, w, h, icon, title, desc, accent, bg=WHITE):
-    """Draws one bright quadrant cell."""
-    draw.rounded_rectangle([x, y, x+w, y+h], radius=28, fill=bg, outline=accent, width=4)
-    # icon
-    ic = rounded_icon_circle(icon, int(h*0.42), bg=WHITE, ring=accent, ring_w=8)
-    ic_center = (x + w//2, y + int(h*0.40))
-    paste_center(draw_base := None, ic, ic_center) if False else None
-    return ic, ic_center, (x, y, w, h), accent
-
 def card_value():
     img = Image.new("RGB", (W, H), CREAM)
     grad = v_gradient(W, H, SUN, (255, 230, 170), (255, 210, 130))
@@ -364,25 +368,23 @@ def card_value():
         r, c = divmod(i, cols)
         x = margin + c*(cw+gap)
         y = top_y + r*(ch+gap)
+        cx = x + cw//2
         # cell
         draw.rounded_rectangle([x, y, x+cw, y+ch], radius=30, fill=WHITE, outline=accent, width=5)
-        # corner accent band
-        draw.rounded_rectangle([x+14, y+14, x+64, y+40], radius=8, fill=accent)
-        # icon
-        ic_dia = int(ch*0.34)
+        # icon centered near top of cell
+        ic_dia = int(cw*0.30)
         ic = rounded_icon_circle(icon, ic_dia, bg=WHITE, ring=accent, ring_w=6)
-        paste_center(img, ic, (x + 70, y + ch//2 - int(ic_dia*0.7)))
-        # title + desc right side
-        tx = x + 150
-        cy = y + ch//2
-        center_text(draw, cy-40, t, 44, fill=INK, is_cjk=True, bold=True, cx=tx)
-        # desc multi-line
+        paste_center(img, ic, (cx, y + int(ch*0.32)))
+        # title
+        center_text(draw, y + int(ch*0.52), t, 42, fill=INK, is_cjk=True, bold=True, cx=cx)
+        # desc
         lines = d.split("\n")
+        gray = tuple(int(v*0.55) for v in INK)
         if len(lines) == 1:
-            center_text(draw, cy+40, lines[0], 30, fill=tuple(int(v*0.6) for v in INK), is_cjk=True, bold=False, cx=tx)
+            center_text(draw, y + int(ch*0.78), lines[0], 30, fill=gray, is_cjk=True, bold=False, cx=cx)
         else:
             for j, ln in enumerate(lines):
-                center_text(draw, cy+20 + j*0, ln, 28, fill=tuple(int(v*0.6) for v in INK), is_cjk=True, bold=False, cx=tx)
+                center_text(draw, y + int(ch*0.70) + j*40, ln, 28, fill=gray, is_cjk=True, bold=False, cx=cx)
 
     draw_mixed(draw, (0, 1265), [("癡LS Group · 東北雙馬拉松 2027", True)], 26, fill=INK, bold=False, center_x=W//2)
     img.save(OUT+"card-value.png")

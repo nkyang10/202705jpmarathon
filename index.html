@@ -3,344 +3,362 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>東北雙馬拉松挑戰之旅 2027｜仙台半馬 × 岩手奥州全馬｜痴LS Group</title>
-<meta name="description" content="一個假期，兩場馬拉松。2027年5月，仙台國際半馬 + 岩手奥州きらめき全馬。佛誕夾中間，請4放9，東北JR Pass 10日任搭。痴LS Group 主辦。">
+<title>東北雙馬拉松挑戰之旅 2027｜仙台半馬 × 岩手奥州全馬｜癡LS Group</title>
+<meta name="description" content="一個假期，兩場馬拉松。2027年5月，仙台國際半馬 + 岩手奥州きらめき全馬。佛誕夾中間，請4放9，東北JR Pass 10日任搭。癡LS Group 主辦。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --coral:#ff5a5f; --sun:#ffc23c; --sky:#39b7e8; --grass:#7cc954;
-  --ink:#23303a; --cream:#fffaf0; --card:#ffffff; --violet:#8b6cf6;
-  --shadow:0 8px 24px rgba(35,48,58,.10);
+  --paper:#f7f4ef; --card:#ffffff; --ink:#2b2a26; --muted:#6e6a61;
+  --accent:#c05f3c; --forest:#3e5c4b; --line:#e6e1d8; --soft:#ece7dd;
+  --serif:'Noto Serif TC',serif; --sans:'Noto Sans TC',sans-serif;
 }
-body{font-family:'Noto Sans TC',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;overflow-x:hidden}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.75;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
-.wrap{max-width:1100px;margin:0 auto;padding:0 18px}
-/* top bar */
-.topbar{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.08);padding:10px 0}
-.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:17px;font-family:'Baloo 2','Noto Sans TC'}
-.brand .logo{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--coral),var(--sun));display:grid;place-items:center;color:#fff;font-size:18px;font-weight:800}
-.brand em{font-style:normal;color:var(--coral)}
-.brand small{display:block;font-size:9px;color:#999;letter-spacing:1px;font-weight:700;line-height:1}
-.btn{display:inline-block;background:var(--coral);color:#fff;font-weight:900;padding:11px 20px;border-radius:40px;text-decoration:none;font-size:15px;box-shadow:0 6px 16px rgba(255,90,95,.4);transition:.2s}
-.btn:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 10px 22px rgba(255,90,95,.5)}
-.btn.sun{background:var(--sun);color:#23303a;box-shadow:0 6px 16px rgba(255,194,60,.45)}
-/* hero */
-.hero{position:relative;color:#fff;overflow:hidden;background:linear-gradient(150deg,#ff5a5f 0%,#ff9a3c 42%,#ffc23c 100%)}
-.hero .blob{position:absolute;border-radius:50%;filter:blur(2px);opacity:.35}
-.hero .b1{width:340px;height:340px;background:#fff;top:-120px;left:-100px}
-.hero .b2{width:280px;height:280px;background:var(--sky);bottom:-90px;right:-60px}
-.hero .b3{width:160px;height:160px;background:#fff;bottom:60px;left:6%;opacity:.22}
-.hero .wrap{position:relative;padding:64px 18px 56px;text-align:center}
-.hero .runner{width:120px;height:120px;margin:0 auto 6px;filter:drop-shadow(0 8px 14px rgba(0,0,0,.25))}
-.hero .kicker{display:inline-block;background:#fff;color:var(--coral);font-weight:900;padding:5px 16px;border-radius:30px;font-size:14px;letter-spacing:1px;margin-bottom:14px;box-shadow:0 4px 12px rgba(0,0,0,.12)}
-.hero h1{font-size:clamp(36px,8vw,70px);font-weight:800;line-height:1.1;margin-bottom:10px;font-family:'Baloo 2','Noto Sans TC';text-shadow:0 4px 16px rgba(0,0,0,.18)}
-.hero h1 span{color:#fff;background:rgba(35,48,58,.25);padding:0 8px;border-radius:14px}
-.hero .sub{font-size:clamp(15px,3vw,20px);font-weight:700;margin-bottom:8px;opacity:.96}
-.hero .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
-.countdown{display:flex;gap:12px;justify-content:center;margin-top:26px;flex-wrap:wrap}
-.countdown .c{background:rgba(255,255,255,.92);color:var(--ink);border-radius:16px;padding:8px 14px;min-width:70px;box-shadow:0 6px 16px rgba(0,0,0,.12)}
-.countdown .c b{display:block;font-size:26px;color:var(--coral);font-family:'Baloo 2'}
-.countdown .c small{font-size:12px;font-weight:700;opacity:.7}
-/* section */
-section{padding:52px 0}
-.sec-head{text-align:center;margin-bottom:32px}
-.sec-head .tag{display:inline-block;background:var(--sky);color:#fff;font-weight:900;letter-spacing:2px;font-size:13px;padding:4px 14px;border-radius:20px;margin-bottom:8px}
-.sec-head h2{font-size:clamp(24px,4.5vw,36px);font-weight:900;font-family:'Baloo 2','Noto Sans TC';color:var(--ink)}
-.sec-head p{color:#5a6a76;margin-top:8px;max-width:660px;margin-left:auto;margin-right:auto}
-/* referral */
-.referral{background:linear-gradient(120deg,var(--sun),var(--coral));color:#fff;border-radius:24px;padding:30px 26px;text-align:center;box-shadow:0 14px 34px rgba(255,90,95,.3);position:relative;overflow:hidden}
-.referral::after{content:'';position:absolute;width:200px;height:200px;background:rgba(255,255,255,.14);border-radius:50%;top:-60px;right:-50px}
-.referral h3{font-size:clamp(20px,4vw,30px);font-weight:900;font-family:'Baloo 2','Noto Sans TC'}
-.referral .money{font-size:clamp(28px,6vw,44px);font-weight:800;margin:8px 0;text-shadow:0 3px 12px rgba(0,0,0,.18);font-family:'Baloo 2'}
-.referral p{opacity:.96}
-/* cards */
-.grid{display:grid;gap:18px}
-.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.card{background:var(--card);border-radius:20px;padding:22px;box-shadow:var(--shadow);border-top:6px solid transparent;transition:.2s}
-.card:hover{transform:translateY(-5px);box-shadow:0 14px 32px rgba(0,0,0,.14)}
-.card.c1{border-color:var(--coral)} .card.c2{border-color:var(--sky)} .card.c3{border-color:var(--grass)}
-.card.c4{border-color:var(--sun)} .card.c5{border-color:var(--violet)} .card.c6{border-color:var(--coral)}
-.card .ico{width:64px;height:64px;border-radius:16px;object-fit:cover;background:#f2f6f9;padding:6px}
-.card h4{font-size:17px;margin:12px 0 6px;font-weight:900}
-.card p{font-size:14px;color:#5a6a76}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+.serif{font-family:var(--serif)}
+
+/* topbar — thin, quiet */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:var(--ink)}
+.brand b{font-family:var(--serif);font-size:17px;font-weight:900;letter-spacing:.5px}
+.brand span{font-size:12px;color:var(--muted)}
+.nav{display:flex;align-items:center;gap:22px}
+.nav a{color:var(--ink);text-decoration:none;font-size:14px;font-weight:500}
+.nav a:hover{color:var(--accent)}
+.nav .btn{background:var(--ink);color:#fff;padding:8px 18px;border-radius:6px;font-weight:700;font-size:13px;transition:.2s}
+.nav .btn:hover{background:var(--accent);color:#fff}
+
+/* hero — photo-led, editorial */
+.hero{position:relative;min-height:520px;display:flex;align-items:flex-end;overflow:hidden;background:#2b2a26}
+.hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.8}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,20,18,.05) 30%,rgba(20,20,18,.82) 100%)}
+.hero .wrap{position:relative;padding:70px 22px 56px}
+.hero .kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:2px;color:#f2e9dc;background:rgba(0,0,0,.35);padding:5px 14px;border-radius:4px;margin-bottom:18px;text-transform:uppercase}
+.hero h1{font-family:var(--serif);color:#fff;font-weight:900;font-size:clamp(30px,6vw,54px);line-height:1.2;margin-bottom:14px;letter-spacing:1px}
+.hero .sub{color:#efe9de;font-size:clamp(14px,2.6vw,18px);max-width:560px;font-weight:400}
+.hero .meta{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap;color:#f5f0e7}
+.hero .meta div{font-size:13px}
+.hero .meta b{display:block;font-family:var(--serif);font-size:19px;font-weight:700;color:#fff}
+.hero .cta-row{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:12px 24px;border-radius:6px;text-decoration:none;font-size:14px;transition:.2s}
+.btn:hover{background:#a94f2f;transform:translateY(-1px)}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.6);color:#fff}
+.btn.ghost:hover{background:#fff;color:var(--ink)}
+
+/* sections */
+section{padding:64px 0}
+section.alt{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sec-head{max-width:640px;margin-bottom:38px}
+.sec-head .tag{font-size:12px;font-weight:700;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
+.sec-head h2{font-family:var(--serif);font-size:clamp(22px,4vw,34px);font-weight:900;line-height:1.3}
+.sec-head p{color:var(--muted);margin-top:10px;font-size:15px}
+
+/* referral — quiet banner */
+.referral{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:34px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.referral h3{font-family:var(--serif);font-size:20px;font-weight:900}
+.referral p{color:var(--muted);font-size:14px;margin-top:6px}
+.referral .mark{font-family:var(--serif);font-size:24px;font-weight:900;color:var(--accent);text-align:right;max-width:220px;line-height:1.3}
+
 /* race cards */
-.race{border-radius:22px;overflow:hidden;box-shadow:var(--shadow);background:#fff}
-.race img{height:190px;width:100%;object-fit:cover}
-.race .body{padding:20px}
-.race .date{display:inline-block;background:var(--ink);color:#fff;padding:4px 14px;border-radius:16px;font-weight:900;font-size:13px}
-.race h3{margin:10px 0 8px;font-size:19px;font-weight:900;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.race .badge{background:var(--grass);color:#fff;border-radius:10px;padding:1px 9px;font-size:12px;font-weight:800}
-.race .row{display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px dashed #eee}
-.race .row span:first-child{color:#8a97a3}
+.grid{display:grid;gap:22px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.race{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.race img{height:210px;width:100%;object-fit:cover}
+.race .body{padding:24px}
+.race .date{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:1px}
+.race h3{font-family:var(--serif);font-size:20px;font-weight:900;margin:6px 0 14px}
+.race .rows{border-top:1px solid var(--line)}
+.race .row{display:flex;justify-content:space-between;gap:12px;padding:9px 0;font-size:14px;border-bottom:1px solid var(--soft)}
+.race .row span{color:var(--muted)}
+.race .row b{font-weight:700}
+.race .badge{display:inline-block;background:var(--forest);color:#fff;font-size:11px;font-weight:700;padding:2px 9px;border-radius:4px;vertical-align:middle;margin-left:6px}
+
 /* video */
-.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
-.video-box{background:#000;border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
-.video-box iframe{width:100%;height:210px;border:0;display:block}
-.video-box .cap{background:#fff;padding:12px 16px;font-size:14px;font-weight:800}
-.video-box .cap small{display:block;font-weight:400;color:#8a97a3;font-size:12px}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px}
+.video-box{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.video-box iframe{width:100%;height:220px;border:0;display:block;background:#000}
+.video-box .cap{padding:16px 20px;font-size:14px;font-weight:700}
+.video-box .cap small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+
+/* selling points — refined list, small icon chips */
+.points{border-top:1px solid var(--line)}
+.point{display:grid;grid-template-columns:52px 1fr;gap:18px;align-items:start;padding:22px 0;border-bottom:1px solid var(--line)}
+.point .ic{width:52px;height:52px;border-radius:10px;overflow:hidden;background:var(--soft);display:grid;place-items:center}
+.point .ic img{width:100%;height:100%;object-fit:cover}
+.point h4{font-size:16px;font-weight:900;margin-bottom:4px}
+.point p{color:var(--muted);font-size:14px}
+
 /* gallery */
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
-.gallery figure{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:16/11;box-shadow:var(--shadow)}
-.gallery img{width:100%;height:100%;object-fit:cover;transition:.4s}
-.gallery figure:hover img{transform:scale(1.07)}
-.gallery figcaption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;padding:24px 12px 9px;font-size:13px;font-weight:800}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.gallery figure{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:4/3;background:var(--soft)}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.gallery figure:hover img{transform:scale(1.05)}
+.gallery figcaption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(20,20,18,.78));color:#fff;padding:26px 14px 10px;font-size:13px;font-weight:500}
+
 /* itinerary */
-.timeline{position:relative;margin-left:22px;border-left:4px solid var(--sky);padding-left:28px;display:grid;gap:16px}
-.tl{background:#fff;border-radius:16px;padding:14px 18px;box-shadow:var(--shadow);position:relative}
-.tl::before{content:'';position:absolute;left:-39px;top:18px;width:15px;height:15px;border-radius:50%;background:var(--sky);border:4px solid #fff;box-shadow:0 0 0 2px var(--sky)}
-.tl .day{font-weight:900}
-.tl b{color:var(--coral)}
-.tl.race-day{background:linear-gradient(120deg,#fff, #fff4d6)}
-.tl.race-day b{color:var(--grass)}
-/* leave */
-.leave{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
-.leave .d{background:#fff;border-radius:14px;padding:12px;text-align:center;border:3px solid #eef2f5}
-.leave .d b{display:block;font-size:22px;font-family:'Baloo 2'}
-.leave .d small{font-size:11px;color:#8a97a3;font-weight:700}
-.leave .d.holiday{border-color:var(--coral);background:#fff0f1}
-.leave .d.holiday b{color:var(--coral)}
-.leave .d.al{border-color:var(--sun);background:#fff8e6}
-.leave .d.al b{color:#e09a00}
+.timeline{border-left:2px solid var(--line);margin-left:8px;padding-left:30px;display:grid;gap:0}
+.tl{position:relative;padding:16px 0}
+.tl::before{content:'';position:absolute;left:-37px;top:22px;width:9px;height:9px;border-radius:50%;background:var(--soft);border:2px solid var(--accent)}
+.tl .day{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--accent)}
+.tl b{font-weight:900}
+.tl .d{color:var(--ink);font-size:14px}
+.tl .note{color:var(--muted);font-size:13px}
+.tl.race-day .day{color:var(--forest)}
+.tl.race-day::before{border-color:var(--forest);background:#fff}
+
+/* leave math */
+.leave{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:10px}
+.leave .d{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 10px;text-align:center}
+.leave .d b{display:block;font-family:var(--serif);font-size:20px;font-weight:700}
+.leave .d small{font-size:11px;color:var(--muted);font-weight:500}
+.leave .d.holiday{border-color:var(--accent);background:#fbf3ee}
+.leave .d.holiday b{color:var(--accent)}
+.leave .d.al{border-color:var(--forest);background:#f2f5f2}
+.leave .d.al b{color:var(--forest)}
+.leave-note{color:var(--muted);font-size:13px;margin-top:18px;text-align:center}
+
 /* price */
-.price-card{background:linear-gradient(160deg,#23303a,#3a4a58);color:#fff;border-radius:24px;padding:34px;text-align:center;box-shadow:0 16px 40px rgba(35,48,58,.35)}
-.price-card .big{font-size:clamp(34px,7vw,52px);font-weight:800;color:var(--sun);font-family:'Baloo 2'}
-.price-card ul{list-style:none;margin:18px 0;text-align:left}
-.price-card li{padding:7px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:15px}
-.price-card li::before{content:'✓ ';color:var(--grass);font-weight:900}
-/* cta */
-.cta-final{background:linear-gradient(120deg,var(--sky),var(--grass));color:#fff;text-align:center;padding:64px 18px}
-.cta-final h2{font-size:clamp(26px,5vw,44px);font-weight:900;font-family:'Baloo 2','Noto Sans TC';text-shadow:0 3px 12px rgba(0,0,0,.16)}
-.cta-final .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:22px}
-.cta-final .btn{background:#fff;color:var(--ink);box-shadow:0 6px 16px rgba(0,0,0,.2)}
-footer{background:#23303a;color:#aeb9c2;text-align:center;padding:24px;font-size:13px}
-footer .brand{justify-content:center;color:#fff;margin-bottom:8px}
-.hl{color:var(--coral);font-weight:900}
-.note{font-size:12px;color:#8a97a3;text-align:center;margin-top:18px}
-@media(max-width:640px){section{padding:40px 0}.hero .wrap{padding:46px 18px 42px}}
+.price-card{background:var(--ink);color:#f5f0e7;border-radius:14px;padding:40px}
+.price-card h3{font-family:var(--serif);font-size:16px;font-weight:700;letter-spacing:1px}
+.price-card .big{font-family:var(--serif);font-size:clamp(36px,6vw,52px);font-weight:900;color:#fff;margin:8px 0 4px}
+.price-card .per{color:#b9b3a6;font-size:13px}
+.price-card ul{list-style:none;margin:22px 0;columns:2;column-gap:36px}
+.price-card li{padding:8px 0;font-size:14px;border-bottom:1px solid rgba(255,255,255,.1);break-inside:avoid}
+.price-card li::before{content:'✓ ';color:#9cb29f;font-weight:700}
+
+/* CTA */
+.cta-final{background:var(--forest);color:#fff;text-align:center;padding:72px 22px}
+.cta-final h2{font-family:var(--serif);font-size:clamp(24px,5vw,40px);font-weight:900;line-height:1.3}
+.cta-final .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+footer{background:#1f1e1b;color:#a9a49a;text-align:center;padding:28px 20px;font-size:13px}
+footer .brand{color:#fff;font-family:var(--serif);font-size:15px;font-weight:700;margin-bottom:6px}
+.note{color:var(--muted);font-size:12px;text-align:center;margin-top:16px}
+@media(max-width:640px){section{padding:48px 0}.referral{grid-template-columns:1fr}.referral .mark{text-align:left}.price-card ul{columns:1}}
 </style>
 </head>
 <body>
 
-<!-- 頂部 -->
 <div class="topbar">
   <div class="wrap">
-    <div class="brand"><span class="logo">痴</span><span>痴LS Group <em>・東北雙馬拉松</em><small>2027</small></span></div>
-    <div style="display:flex;align-items:center;gap:10px">
-      <a href="info.html" style="color:var(--ink);text-decoration:none;font-weight:800;font-size:14px">賽事資訊</a>
-      <a class="btn" href="#book">即刻報名</a>
-    </div>
+    <a class="brand" href="index.html"><b>癡LS Group</b><span>東北雙馬拉松 2027</span></a>
+    <nav class="nav">
+      <a href="info.html">賽事資訊</a>
+      <a href="#book" class="btn">報名</a>
+    </nav>
   </div>
 </div>
 
-<!-- HERO -->
 <header class="hero">
-  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <img class="bg" src="assets/hero-sendai.jpg" alt="仙台杜之都">
+  <div class="veil"></div>
   <div class="wrap">
-    <img class="runner" src="assets/icons/icon-runner.png" alt="跑手" onerror="this.style.display='none'">
-    <span class="kicker">🔥 一個假期・兩場馬拉松</span>
-    <h1>半馬起跑<br>全馬<span>征服</span></h1>
-    <p class="sub">仙台國際半馬（5/9）× 岩手奥州きらめき全馬（5/16）</p>
-    <p style="font-weight:800;font-size:17px">中間 <span style="background:#fff;color:var(--coral);padding:1px 10px;border-radius:10px">5/13 佛誕</span> 正正放假 —— 請4日假，玩足9日</p>
-    <div class="cta-row">
-      <a class="btn" href="#book">🔥 搶名額報名</a>
-      <a class="btn sun" href="#video">睇賽事影片</a>
+    <span class="kicker">一個假期・兩場馬拉松</span>
+    <h1>半馬起跑，全馬征服</h1>
+    <p class="sub">仙台國際半馬 × 岩手奥州きらめき全馬。中間 5/13 佛誕放假，請4放9，東北 JR Pass 10日任搭。</p>
+    <div class="meta">
+      <div><b>5·09</b>仙台半馬</div>
+      <div><b>5·13</b>佛誕</div>
+      <div><b>5·16</b>奥州全馬</div>
     </div>
-    <div class="countdown" id="cd"></div>
+    <div class="cta-row">
+      <a class="btn" href="#book">查詢名額</a>
+      <a class="btn ghost" href="#video">觀看賽事</a>
+    </div>
   </div>
 </header>
 
-<!-- 拉友 -->
-<section class="wrap">
-  <div class="referral">
-    <div style="font-weight:700">👋 我係今次跑團領隊，帶多啲朋友嚟，回憶先夠熱鬧！</div>
-    <h3>🎁 拉友一齊跑・送嘅係美好回憶</h3>
-    <div class="money">帶埋朋友，一齊衝線嘅感動</div>
-    <p>呢度唔講錢 —— 一齊跑過仙台杜之都、一齊征服奥州全馬、一齊泡湯食牛，呢啲先係最無價嘅嘢。名額有限，齊人先好玩。</p>
+<section>
+  <div class="wrap">
+    <div class="referral">
+      <div>
+        <h3>帶埋朋友，送嘅係美好回憶</h3>
+        <p>一齊跑過仙台杜之都、一齊征服奥州全馬、一齊泡湯食牛。呢度唔講錢，講嘅係一齊衝線嘅感動。名額有限，齊人先好玩。</p>
+      </div>
+      <div class="mark">「你負責跑，其餘我哋搞掂」</div>
+    </div>
   </div>
 </section>
 
-<!-- 兩場馬拉松 -->
-<section class="wrap">
-  <div class="sec-head">
-    <div class="tag">TWO RACES</div>
-    <h2>一場旅程・雙料挑戰</h2>
-    <p>由仙台杜之都起步，一星期後喺岩手奥州征服全馬 —— 一次過實現「半馬+全馬」雙成就。</p>
-  </div>
-  <div class="grid g2">
-    <div class="race">
-      <img src="assets/hero-sendai.jpg" alt="仙台" onerror="this.style.display='none'">
-      <div class="body">
-        <span class="date">5/9（日）</span>
-        <h3>🏁 仙台國際半馬 <span class="badge">21.0975km</span></h3>
-        <div class="row"><span>起跑</span><b>10:05 / 10:15（兩波浪）</b></div>
-        <div class="row"><span>限時</span><b>2 小時 30 分</b></div>
-        <div class="row"><span>規模</span><b>約 1 萬人・國際級城市賽</b></div>
-        <div class="row"><span>賽道</span><b>定禅寺通「杜之都」林蔭大道</b></div>
-        <div class="row"><span>參賽費</span><b>¥8,000</b></div>
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">Two Races</div>
+      <h2>一場旅程，雙料挑戰</h2>
+      <p>由仙台杜之都起步，一星期後喺岩手奥州征服全馬 —— 一次過實現「半馬 + 全馬」雙成就。</p>
+    </div>
+    <div class="grid g2">
+      <div class="race">
+        <img src="assets/hero-sendai.jpg" alt="仙台半馬">
+        <div class="body">
+          <span class="date">5 月 9 日 · 星期日</span>
+          <h3>仙台國際半馬 <span class="badge">21.0975km</span></h3>
+          <div class="rows">
+            <div class="row"><span>起跑</span><b>10:05 / 10:15 兩波浪</b></div>
+            <div class="row"><span>限時</span><b>2 小時 30 分</b></div>
+            <div class="row"><span>規模</span><b>約 1 萬人</b></div>
+            <div class="row"><span>賽道</span><b>定禅寺通・杜之都林蔭</b></div>
+            <div class="row"><span>參賽費</span><b>¥8,000</b></div>
+          </div>
+        </div>
+      </div>
+      <div class="race">
+        <img src="assets/oshumarathon.jpg" alt="奥州全馬">
+        <div class="body">
+          <span class="date">5 月 16 日 · 星期日</span>
+          <h3>岩手奥州きらめき全馬 <span class="badge">42.195km</span></h3>
+          <div class="rows">
+            <div class="row"><span>起跑</span><b>8:30</b></div>
+            <div class="row"><span>限時</span><b>6 小時</b></div>
+            <div class="row"><span>賽道</span><b>高低差僅 20m・破PB</b></div>
+            <div class="row"><span>噱頭</span><b>大谷翔平出身地</b></div>
+            <div class="row"><span>參賽費</span><b>¥10,000</b></div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="race">
-      <img src="assets/oshumarathon.jpg" alt="奥州全馬" onerror="this.style.display='none'">
-      <div class="body">
-        <span class="date">5/16（日）</span>
-        <h3>🏅 岩手奥州きらめき全馬 <span class="badge">42.195km</span></h3>
-        <div class="row"><span>起跑</span><b>8:30</b></div>
-        <div class="row"><span>限時</span><b>6 小時</b></div>
-        <div class="row"><span>賽道</span><b>高低差僅 20m・破PB首選</b></div>
-        <div class="row"><span>噱頭</span><b>大谷翔平出身地</b></div>
-        <div class="row"><span>參賽費</span><b>¥10,000</b></div>
+    <p class="note">彩蛋：仙台半馬係 RUN as ONE – 東京馬拉松2027 提攜大會，完賽可抽東京馬拉松名額。</p>
+  </div>
+</section>
+
+<section id="video">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">Watch</div>
+      <h2>感受現場</h2>
+      <p>以下為官方賽事片；我哋自己嘅宣傳片稍後上載至 YouTube，就會喺度換上。</p>
+    </div>
+    <div class="video-grid">
+      <div class="video-box">
+        <iframe loading="lazy" src="https://www.youtube.com/embed/T8YtC3yofPQ" title="仙台國際半馬 精華" allowfullscreen></iframe>
+        <div class="cap">仙台國際半馬 官方精華 <small>official digest</small></div>
+      </div>
+      <div class="video-box">
+        <iframe loading="lazy" src="https://www.youtube.com/embed/zMB8N78jR0I" title="岩手奥州きらめき馬拉松" allowfullscreen></iframe>
+        <div class="cap">岩手奥州きらめき馬拉松 現場 <small>official live camera</small></div>
       </div>
     </div>
   </div>
-  <p class="note">✨ 彩蛋：仙台半馬係 <b>RUN as ONE – 東京馬拉松2027</b> 提攜大會，完賽可抽東京馬拉松名額，隨時「衝六大」！</p>
 </section>
 
-<!-- 影片 -->
-<section class="wrap" id="video">
-  <div class="sec-head">
-    <div class="tag">WATCH</div>
-    <h2>先睇片感受現場</h2>
-    <p>（以下為官方賽事片；我哋自己嘅宣傳片稍後 upload 上 YouTube 就呢度換片）</p>
-  </div>
-  <div class="video-grid">
-    <div class="video-box">
-      <iframe loading="lazy" src="https://www.youtube.com/embed/T8YtC3yofPQ" title="仙台國際半馬 2026 精華" allowfullscreen></iframe>
-      <div class="cap">仙台國際半馬 2026 精華 <small>official digest</small></div>
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">Why Us</div>
+      <h2>點解跟我哋去跑</h2>
     </div>
-    <div class="video-box">
-      <iframe loading="lazy" src="https://www.youtube.com/embed/zMB8N78jR0I" title="岩手奥州きらめき馬拉松 現場" allowfullscreen></iframe>
-      <div class="cap">岩手奥州きらめき馬拉松 現場 <small>official live camera</small></div>
+    <div class="points">
+      <div class="point"><div class="ic"><img src="assets/icons/icon-guarantee.png" alt=""></div><div><h4>保證名額</h4><p>代辦報名，唔使自己搶籤。</p></div></div>
+      <div class="point"><div class="ic"><img src="assets/icons/icon-sakura.png" alt=""></div><div><h4>佛誕夾中間</h4><p>5/13 佛誕正正放假，請4放9。</p></div></div>
+      <div class="point"><div class="ic"><img src="assets/icons/icon-train.png" alt=""></div><div><h4>東北 JR Pass 10日</h4><p>新幹線 + 在來線任搭，松島・平泉・盛岡・花卷隨你跳。</p></div></div>
+      <div class="point"><div class="ic"><img src="assets/icons/icon-pb.png" alt=""></div><div><h4>平坦全馬破PB</h4><p>奥州賽道高低差僅 20m，刷新個人最佳嘅絕佳機會。</p></div></div>
+      <div class="point"><div class="ic"><img src="assets/icons/icon-gyutan.png" alt=""></div><div><h4>美食溫泉恢復</h4><p>仙台牛舌、岩手前澤牛、花卷溫泉，跑完立即回血。</p></div></div>
+      <div class="point"><div class="ic"><img src="assets/icons/icon-friends.png" alt=""></div><div><h4>拉友同行</h4><p>帶朋友一齊跑，送嘅係一齊衝線嘅美好回憶。</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- 賣點 -->
-<section class="wrap">
-  <div class="sec-head">
-    <div class="tag">WHY US</div>
-    <h2>點解要跟我哋去跑？</h2>
-  </div>
-  <div class="grid g3">
-    <div class="card c1"><img class="ico" src="assets/icons/icon-guarantee.png" alt="保證名額" onerror="this.style.display='none'"><h4>保證名額</h4><p>代辦報名，唔使自己搶籤，報到一定跑得成。</p></div>
-    <div class="card c2"><img class="ico" src="assets/icons/icon-sakura.png" alt="佛誕" onerror="this.style.display='none'"><h4>佛誕夾中間</h4><p>5/13 佛誕正正放假，請4放9，慳到盡。</p></div>
-    <div class="card c3"><img class="ico" src="assets/icons/icon-train.png" alt="JR Pass" onerror="this.style.display='none'"><h4>東北JR Pass 10日</h4><p>新幹線+在來線任搭，松島・平泉・盛岡・花卷隨你跳。</p></div>
-    <div class="card c4"><img class="ico" src="assets/icons/icon-pb.png" alt="破PB" onerror="this.style.display='none'"><h4>平坦全馬破PB</h4><p>奥州賽道高低差僅20m，刷新個人最佳嘅絕佳機會。</p></div>
-    <div class="card c5"><img class="ico" src="assets/icons/icon-gyutan.png" alt="美食溫泉" onerror="this.style.display='none'"><h4>美食溫泉恢復</h4><p>仙台牛舌・岩手前澤牛・花卷溫泉，跑完立即回血。</p></div>
-    <div class="card c6"><img class="ico" src="assets/icons/icon-friends.png" alt="拉友同行" onerror="this.style.display='none'"><h4>拉友同行</h4><p>帶朋友一齊跑，送嘅唔係折扣，係一齊衝線嘅美好回憶。</p></div>
-  </div>
-</section>
-
-<!-- 相簿 -->
-<section class="wrap">
-  <div class="sec-head">
-    <div class="tag">GALLERY</div>
-    <h2>東北・跑住玩透</h2>
-  </div>
-  <div class="gallery">
-    <figure><img src="assets/matsushima.jpg" alt="松島" loading="lazy"><figcaption>松島・日本三景</figcaption></figure>
-    <figure><img src="assets/hiraizumi.jpg" alt="平泉" loading="lazy"><figcaption>平泉・中尊寺金色堂</figcaption></figure>
-    <figure><img src="assets/onsen.jpg" alt="溫泉" loading="lazy"><figcaption>花卷溫泉・恢復</figcaption></figure>
-    <figure><img src="assets/oshumarathon.jpg" alt="奥州賽道" loading="lazy"><figcaption>奥州・田園平坦賽道</figcaption></figure>
-    <figure><img src="assets/gyutan.jpg" alt="牛舌" loading="lazy"><figcaption>仙台牛舌・慶功</figcaption></figure>
-    <figure><img src="assets/hero-sendai.jpg" alt="仙台" loading="lazy"><figcaption>仙台・杜之都</figcaption></figure>
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">Gallery</div>
+      <h2>東北，跑住玩透</h2>
+    </div>
+    <div class="gallery">
+      <figure><img src="assets/matsushima.jpg" alt="松島" loading="lazy"><figcaption>松島・日本三景</figcaption></figure>
+      <figure><img src="assets/hiraizumi.jpg" alt="平泉" loading="lazy"><figcaption>平泉・中尊寺金色堂</figcaption></figure>
+      <figure><img src="assets/onsen.jpg" alt="溫泉" loading="lazy"><figcaption>花卷溫泉・恢復</figcaption></figure>
+      <figure><img src="assets/oshumarathon.jpg" alt="奥州" loading="lazy"><figcaption>奥州・田園平坦賽道</figcaption></figure>
+      <figure><img src="assets/gyutan.jpg" alt="牛舌" loading="lazy"><figcaption>仙台牛舌・慶功</figcaption></figure>
+      <figure><img src="assets/hero-sendai.jpg" alt="仙台" loading="lazy"><figcaption>仙台・杜之都</figcaption></figure>
+    </div>
   </div>
 </section>
 
-<!-- 行程 -->
-<section class="wrap">
-  <div class="sec-head">
-    <div class="tag">ITINERARY</div>
-    <h2>9日行程快覽</h2>
-    <p>慢活玩東北，主力留返畀全馬。</p>
-  </div>
-  <div class="timeline">
-    <div class="tl"><b>Day 1｜5/8 六</b> <span class="day">香港 → 仙台</span> 機場→酒店、<b>半馬報到領號碼布</b>、夜食牛舌<br><small>✈️ HK Express 直航 UO891 08:15→13:30</small></div>
-    <div class="tl race-day"><b>Day 2｜5/9 日</b> <span class="day">🏁 仙台國際半馬</span> 10:05 起跑・當「高質素 long run」控制配速<br><small>主力留返下星期日全馬</small></div>
-    <div class="tl"><b>Day 3｜5/10 一</b> <span class="day">松島・恢復遊</span> 日本三景遊船・輕鬆行</div>
-    <div class="tl"><b>Day 4｜5/11 二</b> <span class="day">平泉・世界遺產</span> 中尊寺金色堂・毛越寺</div>
-    <div class="tl"><b>Day 5｜5/12 三</b> <span class="day">盛岡・花卷溫泉</span> 前澤牛・泡湯恢復</div>
-    <div class="tl race-day"><b>Day 6｜5/13 四</b> <span class="day">🎋 佛誕・全日休息</span> 紅日放假・休腳補碳・溫泉</div>
-    <div class="tl"><b>Day 7｜5/14 五</b> <span class="day">轉戰奥州</span> 移動・最後補碳日</div>
-    <div class="tl"><b>Day 8｜5/15 六</b> <span class="day">奥州全馬報到</span> 領號碼布・賽前briefing・早瞓</div>
-    <div class="tl race-day"><b>Day 9｜5/16 日</b> <span class="day">🏅 岩手奥州きらめき全馬</span> 8:30 起跑・完賽慶功 → 傍晚新幹線落東京 → ✈️ <b>羽田紅眼機返港</b></div>
-    <div class="tl"><b>Day 10｜5/17 一</b> <span class="day">✨ Optional Bonus・自費</span> 多留一日泡湯恢復・日頭機返港（<b>自費假期・唔包團費</b>）</div>
-  </div>
-</section>
-
-<!-- 請4放9 -->
-<section class="wrap">
-  <div class="sec-head">
-    <div class="tag">LEAVE MATH</div>
-    <h2>請4放9・精算師最愛</h2>
-    <p>只需要請 <b class="hl">4 日</b>假，就換到 <b class="hl">9 日</b>旅程。</p>
-  </div>
-  <div class="leave">
-    <div class="d"><b>5/8</b><small>六・出發</small></div>
-    <div class="d"><b>5/9</b><small>日・半馬</small></div>
-    <div class="d al"><b>5/10</b><small>一・請假</small></div>
-    <div class="d al"><b>5/11</b><small>二・請假</small></div>
-    <div class="d al"><b>5/12</b><small>三・請假</small></div>
-    <div class="d holiday"><b>5/13</b><small>佛誕</small></div>
-    <div class="d al"><b>5/14</b><small>五・請假</small></div>
-    <div class="d"><b>5/15</b><small>六</small></div>
-    <div class="d"><b>5/16</b><small>日・全馬</small></div>
-  </div>
-  <p class="note">✈️ 預設回程：5/16 完賽後新幹線落東京羽田，紅眼機返港 —— 9日旅程啱啱好。想輕鬆啲可自費多留一日（5/17）泡湯恢復先走，<b>自費假期・唔包團費</b>。</p>
-</section>
-
-<!-- 價錢 -->
-<section class="wrap">
-  <div class="sec-head">
-    <div class="tag">PACKAGE</div>
-    <h2>一人費用・一目了然</h2>
-  </div>
-  <div class="price-card" id="book">
-    <div style="font-weight:800">🔥 東北雙馬拉松 9日 Package</div>
-    <div class="big">HK$13,800<span style="font-size:16px"> 起</span></div>
-    <div class="per" style="opacity:.85;font-size:14px">每人・雙人房計（來回機票+酒店+JR Pass+代辦報名）</div>
-    <ul>
-      <li>香港快運 HKG⇄SDJ 直航來回機票</li>
-      <li>東北 JR Pass 10日（新幹線+在來線任搭）</li>
-      <li>8–9 晚經濟酒店 / 溫泉旅館住宿</li>
-      <li>兩場馬拉松代辦報名・保證名額</li>
-      <li>賽前報到、交通指引、領隊全程跟進</li>
-      <li>🎁 拉友同行：帶朋友一齊跑，送嘅係一齊衝線嘅美好回憶</li>
-    </ul>
-    <a class="btn" href="#" style="font-size:17px;padding:14px 34px">🔥 立即留位</a>
-    <p class="note" style="color:#aeb9c2">名額有限・先到先得｜*以上費用為參考估算，以實際報價為準</p>
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">Itinerary</div>
+      <h2>9 日行程</h2>
+      <p>慢活玩東北，主力留返畀全馬。文青玩法睇風景、運動玩法踩單車，兩條路線都預備好（見行程文件）。</p>
+    </div>
+    <div class="timeline">
+      <div class="tl"><div class="day">Day 1 · 5/8 六</div><div class="d">香港 → 仙台，<b>半馬報到領號碼布</b>，夜食牛舌</div><div class="note">香港快運直航 UO891 08:15→13:30</div></div>
+      <div class="tl race-day"><div class="day">Day 2 · 5/9 日</div><div class="d">🏁 仙台國際半馬 — 當高質素 long run 控制配速</div></div>
+      <div class="tl"><div class="day">Day 3 · 5/10 一</div><div class="d">松島・日本三景，輕鬆恢復</div></div>
+      <div class="tl"><div class="day">Day 4 · 5/11 二</div><div class="d">山寺・藏王御釜 或 GIANT 單車踩廣瀬川</div></div>
+      <div class="tl"><div class="day">Day 5 · 5/12 三</div><div class="d">平泉・中尊寺金色堂、嚴美溪</div></div>
+      <div class="tl race-day"><div class="day">Day 6 · 5/13 四</div><div class="d">🎋 佛誕・全日休腳，泡湯補碳</div></div>
+      <div class="tl"><div class="day">Day 7 · 5/14 五</div><div class="d">鳴子峽 / 秋保溫泉，轉戰奥州</div></div>
+      <div class="tl"><div class="day">Day 8 · 5/15 六</div><div class="d">奥州全馬報到，補碳早瞓</div></div>
+      <div class="tl race-day"><div class="day">Day 9 · 5/16 日</div><div class="d">🏅 岩手奥州きらめき全馬 → 傍晚羽田紅眼機返港</div></div>
+      <div class="tl"><div class="day">Day 10 · 5/17 一</div><div class="d">多留一日・自費假期唔包團費（optional）</div></div>
+    </div>
   </div>
 </section>
 
-<!-- 最後CTA -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">Leave Math</div>
+      <h2>請 4 放 9</h2>
+      <p>只需請 4 日假，就換到 9 日旅程 —— 佛誕正正夾喺兩場馬拉松中間。</p>
+    </div>
+    <div class="leave">
+      <div class="d"><b>5/8</b><small>六·出發</small></div>
+      <div class="d"><b>5/9</b><small>日·半馬</small></div>
+      <div class="d al"><b>5/10</b><small>一·請假</small></div>
+      <div class="d al"><b>5/11</b><small>二·請假</small></div>
+      <div class="d al"><b>5/12</b><small>三·請假</small></div>
+      <div class="d holiday"><b>5/13</b><small>佛誕</small></div>
+      <div class="d al"><b>5/14</b><small>五·請假</small></div>
+      <div class="d"><b>5/15</b><small>六</small></div>
+      <div class="d"><b>5/16</b><small>日·全馬</small></div>
+    </div>
+    <p class="leave-note">預設回程：5/16 完賽後新幹線落東京羽田，紅眼機返港。想輕鬆啲可自費多留一日（5/17，自費假期唔包）。</p>
+  </div>
+</section>
+
+<section class="alt" id="book">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="tag">Package</div>
+      <h2>費用一目了然</h2>
+      <p>詳細費用分項放喺賽事資訊頁。</p>
+    </div>
+    <div class="price-card">
+      <h3>東北雙馬拉松 · 9 日</h3>
+      <div class="big">HK$13,800<span style="font-size:16px"> 起</span></div>
+      <div class="per">每人・雙人房計（來回機票＋酒店＋JR Pass＋代辦報名）</div>
+      <ul>
+        <li>香港快運 HKG⇄SDJ 直航</li>
+        <li>東北 JR Pass 10日</li>
+        <li>8–9 晚經濟酒店 / 溫泉旅館</li>
+        <li>兩場馬拉松代辦報名</li>
+        <li>賽前報到・交通・領隊跟進</li>
+        <li>帶朋友一齊跑，送美好回憶</li>
+      </ul>
+      <a class="btn" href="info.html" style="font-size:15px;padding:13px 30px">查看詳細行程與費用</a>
+    </div>
+  </div>
+</section>
+
 <section class="cta-final">
-  <h2>你負責跑，其餘我哋搞掂</h2>
-  <p style="opacity:.95;font-weight:700">帶埋朋友，雙馬拉松一齊征服東北。</p>
+  <h2>你負責跑，其餘我哋搞掂。</h2>
   <div class="btns">
-    <a class="btn" href="#book">🔥 即刻報名</a>
-    <a class="btn" href="#video">睇賽事影片</a>
+    <a class="btn" href="info.html">查詢名額</a>
+    <a class="btn ghost" href="#video">觀看賽事</a>
   </div>
 </section>
 
 <footer>
-  <div class="brand"><span class="logo">痴</span><span>痴LS Group</span></div>
-  🏃 東北雙馬拉松挑戰之旅 2027｜仙台國際半馬 × 岩手奥州きらめき全馬<br>
-  帶埋朋友一齊跑，送嘅係最美好嘅回憶 😉
+  <div class="brand">癡LS Group</div>
+  東北雙馬拉松挑戰之旅 2027｜仙台國際半馬 × 岩手奥州きらめき全馬<br>
+  帶埋朋友一齊跑，送嘅係最美好嘅回憶。
 </footer>
 
-<script>
-const race = new Date('2027-05-09T10:00:00+09:00').getTime();
-function tick(){
-  const now=Date.now();let diff=race-now;
-  const cd=document.getElementById('cd');
-  if(diff<0){cd.innerHTML='<div class="c"><b>開跑！</b></div>';return;}
-  const d=Math.floor(diff/864e5),h=Math.floor(diff/36e5)%24,m=Math.floor(diff/6e4)%60,s=Math.floor(diff/1e3)%60;
-  cd.innerHTML=`<div class="c"><b>${d}</b><small>日</small></div><div class="c"><b>${String(h).padStart(2,'0')}</b><small>時</small></div><div class="c"><b>${String(m).padStart(2,'0')}</b><small>分</small></div><div class="c"><b>${String(s).padStart(2,'0')}</b><small>秒</small></div>`;
-}
-tick();setInterval(tick,1000);
-</script>
 </body>
 </html>

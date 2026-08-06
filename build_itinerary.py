@@ -43,6 +43,31 @@ def titlebar(c, x, y, w, h, fill, txt, fs=13, tc=WHITEC):
     c.setFont("WQY", fs)
     c.drawString(x + 12, y + h/2 - fs*0.36, txt)
 
+def wrap_lines(text, fs, maxw):
+    """Wrap text into lines by character width (CJK-aware via stringWidth)."""
+    lines = []
+    for para in text.split("\n"):
+        cur = ""
+        for ch in para:
+            if stringWidth(cur + ch, "WQY", fs) > maxw:
+                lines.append(cur)
+                cur = ch
+            else:
+                cur += ch
+        if cur:
+            lines.append(cur)
+    return lines
+
+def bullet_block(y, text, color, fs=10.5, leading=15, x=M, indent=24, maxw=None):
+    maxw = maxw or (W - 2*M - indent - 8)
+    lines = wrap_lines(text, fs, maxw)
+    for ln in lines:
+        c.setFillColor(color); c.circle(x+10, y+3, 2.2, stroke=0, fill=1)
+        c.setFillColor(INK); c.setFont("WQY", fs)
+        c.drawString(x+indent, y, ln)
+        y -= leading
+    return y
+
 def footer(pagenum=None):
     c.setFillColor(CORAL)
     c.rect(0, 0, W, 10, stroke=0, fill=1)
@@ -191,11 +216,8 @@ for (label, date, title, color, lines) in days:
     y -= 20
 
     for line in lines:
-        # bullet
-        c.setFillColor(color); c.circle(M+10, y+3.5, 2.2, stroke=0, fill=1)
-        c.setFillColor(INK); c.setFont("WQY", 11)
-        c.drawString(M+22, y, line)
-        y -= 19
+        # bullet (wrapped)
+        y = bullet_block(y, line, color, fs=11, leading=20) - 3
 
     # bottom tip banner
     tip = {"DAY 1": "編號布一定要 5/8 當日攞，過日無得攞！",
@@ -219,13 +241,11 @@ for (label, date, title, color, lines) in days:
 # =========================================================
 def section(y, title, color, bullets):
     titlebar(c, M, y, W-2*M, 30, color, "  " + title, fs=13)
-    y -= 24
+    y -= 26
     for b in bullets:
-        c.setFillColor(color); c.circle(M+12, y+3, 2.2, stroke=0, fill=1)
-        c.setFillColor(INK); c.setFont("WQY", 10.5)
-        c.drawString(M+24, y, b)
-        y -= 16
-    return y - 10
+        y = bullet_block(y, b, color)
+        y -= 6
+    return y - 6
 
 # 注意事項 page 1
 titlebar(c, M, H-M-30, W-2*M, 34, CORAL, "  馬拉松相關注意事項", fs=15)
