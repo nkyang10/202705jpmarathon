@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nkyang10.github.io/202705jpmarathon/sitemap.xml
